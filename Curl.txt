@@ -1,0 +1,31 @@
+
+Command line sistema operativo Linux:
+
+    Llamadas POST,DELETE Y UPDATE series:
+
+        POST:
+        DELETE:
+        UPDATE:
+
+    Llamadas POST, DELETE Y UPDATE temporades:
+
+        POST:
+        DELETE:
+        UPDATE:
+
+
+Command line sistema operativo Windows:
+
+    Llamadas POST,DELETE Y UPDATE series:
+
+        POST: curl -X POST http://localhost:3000/api/series -H "Content-Type: application/json" -d "{\"Nom\": \"Oliver y Benji\", \"descripcio\": \"Oliver y Benji, conocidos también como Captain Tsubasa, es una serie de anime y manga que gira en torno al fútbol.\", \"estat\": \"finalitzat\", \"idioma\":\"Angles\", \"imatge\":\"https://m.media-amazon.com/images/M/MV5BYjM2ZThlNjctZmVjZC00ZjllLWE2YjctODEwMmMwMmZlMDI1XkEyXkFqcGdeQXVyNzgzNjM4NTE@._V1_FMjpg_UX1000_.jpg\",\"enllac\":\"https://m.imdb.com/title/tt10399630/?language=es-es\"}"
+        DELETE: curl -X DELETE http://localhost:3000/api/series/0
+        UPDATE: curl -X PUT http://localhost:3000/api/series/3 -H "Content-Type: application/json" -d "{\"Nom\":\"Boles de drac z\", \"idioma\":\"Japonès\"}"
+
+    Llamadas POST, DELETE Y UPDATE temporades:
+
+        POST: curl -X POST http://localhost:3000/api/temporades -H "Content-Type: application/json" -d "{\"Nom\": \"Oliver y Benji: temporada 1 \", \"descripcio\": \"La primera temporada se centra en su tiempo en la escuela secundaria, donde se unen al equipo de fútbol y luchan por convertirse en los mejores jugadores. A lo largo de la temporada, enfrentan desafíos, rivales poderosos y trabajan juntos para superar obstáculos tanto dentro como fuera del campo de fútbol.\", \"estat\": \"finalitzat\", \"imatge\":\"https://m.media-amazon.com/images/M/MV5BZmE1YzRiMWEtODI5NS00ZDkzLWFmNTctOGNlYmU0MmJkODY4XkEyXkFqcGdeQXVyMjMxMDM2NjY@._V1_FMjpg_UX1000_.jpg\",\"enllac\":\"https://m.imdb.com/title/tt3069742/?language=es-es\", \"serie\": 5, \"episodis\": 50}"
+        DELETE: curl -X DELETE http://localhost:3000/api/temporades/0
+        UPDATE: curl -X PUT http://localhost:3000/api/temporades/1 -H "Content-Type: application/json" -d "{\"descripcio\":\"Els membres de les forces de seguretat es troben cara a cara amb les sinistres conseqüències d'un atac maquiavèl·lic que amenaça amb engolir la ciutat de Los Angeles en un reguitzell d'horror insondable, mentre Bradford lluita per la seva existència enmig de l'obscuritat implacable que s'apodera de tot.\", \"episodis\":22}"
+
+

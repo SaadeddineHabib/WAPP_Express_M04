@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('head.ejs'); %>
+</head>
+<header>
+    <%- include('header.ejs'); %>
+</header>
+<body>
+<h1> Items list</h1>
+<table>
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>Descrepcio</th>
+        <th>imatge</th>
+        <th>estat</th>
+        <th>idioma</th>
+        <th>enllac</th>
+        <th>Eposidis</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% data.forEach( function (item){ %>
+
+        <tr>
+            <td> <%= item.Nom %></td>
+            <td> <%= item.descripcio %></td>
+            <td> <img src="<%= item.imatge %>"></td>
+            <td> <%= item.estat %></td>
+            <td> <%= item.idioma %></td>
+            <td><a href="<%= item.enllac %>">Enllac</a></td>
+            <td> <%= item.episodis %></td>
+        </tr>
+    <% } ) %>
+
+    </tbody>
+</table>
+</body>
+</html>
