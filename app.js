@@ -22,6 +22,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+const knex = require('kenx')(
+    {
+        client: 'sqlite3',
+        connection: './foo_sqlite3'
+    }
+)
+
 
 let series = [{
     Nom: "The Rookie",
@@ -293,10 +300,24 @@ app.delete('/api/series/:id', (req, res) => {
     }
 })
 
-app.post('/api/temporades', (req, res) => {
+// app.post('/api/temporades', (req, res) => {
+//     let params = req.body
+//     params.id = temporades.length + 1
+//     temporades.push(params) // DB.insert(...)
+//     res.status(201).json(params)
+// })
+
+app.post('/api/temporades', async (req, res) => {
     let params = req.body
-    params.id = temporades.length + 1
-    temporades.push(params) // DB.insert(...)
+    console.log(params)
+    try {
+        const result = await knex('series').insert(params)
+        console.log(result)
+
+    } catch (e) {
+        console.log('Error ' + e.message)
+    }
+
     res.status(201).json(params)
 })
 
